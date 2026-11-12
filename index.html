@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recicla+ — aprenda a descartar e reciclar corretamente cada tipo de material.">
+    <title>Recicla+ | Reciclagem e Meio Ambiente</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="tema.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="#inicio" class="logo">♻️ Recicla+</a>
+
+        <div class="header-direita">
+            <nav id="menu" aria-label="Menu principal">
+                <a href="#inicio">Início</a>
+                <a href="#materiais">Materiais</a>
+                <a href="#lixeiras">Lixeiras</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#dicas">Dicas</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+
+            <button class="icon-btn" id="temaBtn" aria-label="Alternar modo escuro" title="Alternar modo escuro">🌙</button>
+            <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero reveal" id="inicio">
+            <h2>Bem-vindo ao Recicla+ 🌱</h2>
+
+            <p>
+                A reciclagem é uma forma de reutilização de materiais
+                que contribui para a preservação do meio ambiente.
+                Descubra como descartar cada tipo de resíduo do jeito certo.
+            </p>
+
+            <div class="hero-botoes">
+                <a href="#materiais" class="btn">Aprenda a reciclar</a>
+                <a href="#quiz" class="btn secundario">Teste seus conhecimentos</a>
+            </div>
+
+        </section>
+
+        <div class="consulta reveal">
+            <form id="formConsulta">
+                <label for="material">Escolha um material</label>
+                <select name="material" id="material" required>
+                    <option value="">Selecione</option>
+                </select>
+                <button type="submit">Consultar</button>
+            </form>
+        </div>
+
+        <section class="materiais" id="materiais">
+            <h2 class="reveal">Materiais e Descarte Correto</h2>
+            <p class="subtitulo reveal">
+                Conheça os principais materiais, veja o que é reciclável e como descartar cada um.
+                Clique em um card para ver os detalhes.
+            </p>
+
+            <div class="filtros reveal">
+                <input type="search" id="busca" class="campo busca" placeholder="🔎 Buscar material (ex: vidro, pilha, madeira)" aria-label="Buscar material">
+                <div class="chips" id="chips">
+                    <button class="chip ativo" data-filtro="todos">Todos</button>
+                    <button class="chip" data-filtro="reciclavel">Recicláveis</button>
+                    <button class="chip" data-filtro="entrega">Ponto de entrega</button>
+                    <button class="chip" data-filtro="nao">Não recicláveis</button>
+                </div>
+            </div>
+
+            <div class="cards" id="cards"></div>
+            <p class="sem-resultado" id="semResultado" hidden>Nenhum material encontrado. Tente outra palavra. 🙂</p>
+        </section>
+
+        <section id="lixeiras">
+            <h2 class="reveal">Guia das cores da coleta seletiva</h2>
+            <p class="subtitulo reveal">
+                Cada cor de lixeira tem uma função. Esse é o padrão nacional definido pela Resolução CONAMA nº 275/2001.
+            </p>
+
+            <div class="lixeiras" id="gridLixeiras"></div>
+            <p class="nota reveal">
+                Na prática, a coleta pode variar conforme a sua cidade. Confira com a prefeitura ou a cooperativa local.
+            </p>
+        </section>
+
+        <section id="quiz">
+            <h2 class="reveal">Quiz da reciclagem</h2>
+            <p class="subtitulo reveal">Você sabe mesmo descartar certo? Responda e descubra.</p>
+
+            <div class="quiz-box reveal" id="quizBox" aria-live="polite"></div>
+        </section>
+
+        <section id="dicas">
+            <h2 class="reveal">Itens que exigem cuidado especial</h2>
+            <p class="subtitulo reveal">
+                Alguns resíduos não vão na lixeira comum nem na coleta seletiva.
+                A Política Nacional de Resíduos Sólidos (Lei 12.305/2010) prevê a logística reversa: o fabricante e o comércio recebem de volta alguns produtos.
+            </p>
+
+            <div class="especiais" id="gridEspeciais"></div>
+
+            <div class="ecopontos reveal">
+                <h3> Encontre um ponto de coleta perto de você</h3>
+                <p>Digite sua cidade, bairro ou CEP e veja ecopontos e pontos de entrega no mapa.</p>
+                <form id="formEcopontos">
+                    <input type="text" id="local" class="campo" placeholder="Ex: Recife, Boa Viagem" required aria-label="Cidade, bairro ou CEP">
+                    <button type="submit">Buscar no mapa</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2 class="reveal">Sobre o Recicla+</h2>
+            <p class="subtitulo reveal">
+                Cuidando do planeta através da reciclagem e da tecnologia. Acreditamos que pequenas ações geram grandes mudanças.
+            </p>
+
+            <div class="sobre-grid">
+                <div class="sobre-item reveal">
+                    <h3>Nossa missão</h3>
+                    <p>Conscientizar a população sobre a importância da reciclagem e facilitar o acesso a informações sobre o descarte correto de resíduos.</p>
+                </div>
+                <div class="sobre-item reveal">
+                    <h3>Como a tecnologia pode nos ajudar?</h3>
+                    <p>Buscamos aproximar pessoas, empresas e pontos de coleta, tornando o processo de reciclagem mais simples, rápido e acessível.</p>
+                </div>
+                <div class="sobre-item reveal">
+                    <h3>Futuro sustentável</h3>
+                    <p>Incentivamos práticas sustentáveis no dia a dia para reduzir o lixo enviado a aterros e preservar os recursos naturais para as próximas gerações.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" id="modalBox">
+            <button class="modal-fechar" id="modalFechar" aria-label="Fechar">&times;</button>
+            <h3 id="modalTitulo">Material</h3>
+            <div id="modalConteudo"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>♻️ Recicla+</h4>
+                <p>Informação simples e confiável para você descartar cada resíduo do jeito certo e ajudar a construir um mundo mais limpo e consciente.</p>
+            </div>
+            <div>
+                <h4>Saiba mais</h4>
+                <ul>
+                    <li><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm" target="_blank" rel="noopener">Lei 12.305/2010 (PNRS)</a></li>
+                    <li><a href="#sobre">Nossa missão</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="copy">© <span id="ano"></span> Recicla+ — Pequenas ações, grandes mudanças. 🌱</p>
+    </footer>
+    <button class="topo" id="topo" aria-label="Voltar ao topo">↑</button>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
